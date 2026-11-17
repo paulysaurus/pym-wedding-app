@@ -325,7 +325,7 @@ export function App() {
           <div className="space-y-2">
             <p className="text-[11px] uppercase tracking-[0.25em] text-gold">Madre de la Novia</p>
             <p className="font-editorial text-xl"> </p>
-            <p className="font-editorial text-xl">Lourdes Robles</p>
+            <p className="font-editorial text-xl">María de Lourdes Robles</p>
           </div>
         </div>
       </section>
