@@ -3,7 +3,8 @@ import { CheckCircle2 } from 'lucide-react';
 import { GuestRsvp, RsvpPayload } from '../types/wedding';
 
 const API_URL = import.meta.env.VITE_API_URL
-  || `${window.location.protocol}//${window.location.hostname}:5000/api`;
+  || `${window.location.protocol}//${window.location.hostname}:5000`;
+const API_BASE_URL = `${API_URL.replace(/\/+$/, '')}/api`;
 
 export function RsvpForm() {
   const [code, setCode] = useState('');
@@ -22,7 +23,7 @@ export function RsvpForm() {
     setErrorMsg('');
 
     try {
-      const res = await fetch(`${API_URL}/rsvp/${inviteCode.trim()}`);
+      const res = await fetch(`${API_BASE_URL}/rsvp/${inviteCode.trim()}`);
       if (!res.ok) throw new Error('No encontramos ese código. Verifica tu invitación.');
       const data: GuestRsvp = await res.json();
       setGuest(data);
@@ -67,7 +68,7 @@ export function RsvpForm() {
     };
 
     try {
-      const res = await fetch(`${API_URL}/rsvp/confirm`, {
+      const res = await fetch(`${API_BASE_URL}/rsvp/confirm`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
