@@ -296,7 +296,7 @@ export function App() {
           <div className="w-16 h-[1px] bg-white/60 mx-auto" />
 
           <p className="font-editorial italic text-xl sm:text-2xl text-white/95">
-            06 de Febrero de 2026 · Ciudad de México
+            06 de Febrero de 2027 · Ciudad de México
           </p>
         </div>
 
